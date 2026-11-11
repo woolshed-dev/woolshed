@@ -1,0 +1,23 @@
+title: "[Q&A] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask anything about using Woolshed, its layouts and mods, or Woolshed Core (`hc`).
+        Found a bug? [Open an issue](https://github.com/woolshed-dev/woolshed/issues/new/choose) instead. Security problems go privately: see SECURITY.md.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What are you trying to do, and what have you tried?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Woolshed version and OS
+      description: Settings > Updates, or `woolshed --version`.
+      placeholder: e.g. 0.1.5 on macOS 15, Apple silicon
+    validations:
+      required: false

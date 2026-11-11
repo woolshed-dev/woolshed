@@ -1,0 +1,222 @@
+{
+  "id": "root",
+  "type": "row",
+  "titlebar": "none",
+  "traffic_lights": [
+    12,
+    16
+  ],
+  "theme": "graphite",
+  "colors": {
+    "background": "#13110f",
+    "surface": "#13110f",
+    "canvas": "#0e0c0b",
+    "chrome": "#0b0a09",
+    "popover": "#1b1815",
+    "raised": "#201c18",
+    "hover": "#f5e6d00d",
+    "selected": "#f5e6d016",
+    "border": "#2b2621",
+    "input": "#3a332c",
+    "selection": "#3c3127",
+    "accent_foreground": "#13110f",
+    "solid_foreground": "#13110f",
+    "foreground": "#cbbfae",
+    "terminal_foreground": "#b5a893",
+    "muted": "#8e8373",
+    "dim": "#645b4f",
+    "accent": "#c39563",
+    "solid": "#cbbfae",
+    "cursor": "#c39563",
+    "ring": "#8e8373",
+    "working": "#b8964f",
+    "blocked": "#c2735d",
+    "done": "#8399a6",
+    "idle": "#5d554a",
+    "unknown": "#5d554a",
+    "ansi0": "#2a2520",
+    "ansi1": "#b8735f",
+    "ansi2": "#909b6a",
+    "ansi3": "#b8964f",
+    "ansi4": "#7f96a4",
+    "ansi5": "#a5849a",
+    "ansi6": "#7e9d95",
+    "ansi7": "#b5a893",
+    "ansi8": "#5f564b",
+    "ansi9": "#c98670",
+    "ansi10": "#a2ad7a",
+    "ansi11": "#caa862",
+    "ansi12": "#92a8b6",
+    "ansi13": "#b796ab",
+    "ansi14": "#90aea6",
+    "ansi15": "#d3c6b1"
+  },
+  "background": "canvas",
+  "terminal_padding": [
+    14,
+    12
+  ],
+  "divider": {
+    "width": 1,
+    "color": "border"
+  },
+  "preview": "mods/night-shift/preview.svg",
+  "children": [
+    {
+      "id": "sidebar",
+      "type": "column",
+      "size": {
+        "px": 252
+      },
+      "min": 44,
+      "max": 480,
+      "background": "chrome",
+      "resizable": false,
+      "children": [
+        {
+          "id": "brand",
+          "type": "block",
+          "size": {
+            "px": 46
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "night-shift",
+            "props": {
+              "role": "brand"
+            }
+          }
+        },
+        {
+          "id": "sidebar-lists",
+          "type": "column",
+          "children": [
+            {
+              "id": "spaces",
+              "type": "block",
+              "size": {
+                "weight": 1
+              },
+              "min": 90,
+              "content": {
+                "mod": "spaces"
+              }
+            },
+            {
+              "id": "agents",
+              "type": "block",
+              "size": {
+                "weight": 1
+              },
+              "min": 90,
+              "content": {
+                "mod": "agents"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "resizable": false,
+      "children": [
+        {
+          "id": "tabs",
+          "type": "block",
+          "size": {
+            "px": 42
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "tabs"
+          }
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "padding": 8,
+          "gap": 8,
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "gap": 8,
+                  "radius": 10,
+                  "background": "background",
+                  "lone": true,
+                  "border": {
+                    "width": 1,
+                    "color": "border"
+                  },
+                  "focus": {
+                    "width": 1,
+                    "color": "input"
+                  },
+                  "header": {
+                    "content": {
+                      "mod": "pane"
+                    },
+                    "height": 30,
+                    "position": "top",
+                    "reveal": "always"
+                  }
+                }
+              }
+            },
+            {
+              "id": "panel",
+              "type": "column",
+              "hidden": true,
+              "size": {
+                "px": 368
+              },
+              "min": 280,
+              "max": 900,
+              "children": [
+                {
+                  "id": "panel-body",
+                  "type": "stack",
+                  "active": "files",
+                  "children": [
+                    {
+                      "id": "files",
+                      "type": "block",
+                      "content": {
+                        "mod": "files"
+                      }
+                    },
+                    {
+                      "id": "changes",
+                      "type": "block",
+                      "content": {
+                        "mod": "changes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "night-line",
+          "type": "block",
+          "size": {
+            "px": 28
+          },
+          "content": {
+            "mod": "night-shift",
+            "props": {
+              "role": "line"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Phone alerts", "overlay": { "kind": "window", "key": "notify-ntfy", "keep": true } }

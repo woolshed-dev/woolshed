@@ -1,0 +1,36 @@
+name: A mod can't do this yet
+description: A missing API, event or setting stops your mod or layout from working.
+labels: [mod-api]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The mod API is in [woolshed.d.ts](https://github.com/woolshed-dev/woolshed/blob/main/woolshed.d.ts) and [gpui-kit.d.ts](https://github.com/woolshed-dev/woolshed/blob/main/gpui-kit.d.ts); the copies Woolshed writes to `~/.config/woolshed/` match the version you run.
+  - type: textarea
+    id: building
+    attributes:
+      label: What did you try to build?
+      description: Show your mod or a small example if you can (a gist or a GitHub folder).
+    validations:
+      required: true
+  - type: textarea
+    id: missing
+    attributes:
+      label: What is missing?
+      description: What does Woolshed need to expose so your mod can do it? A function, an event, a field, a setting or a command.
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What did you try instead?
+      description: Workarounds you tried, and why they don't work (e.g. polling, `exec`, shared state).
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Woolshed version
+      description: Settings > Updates, or `woolshed --version`.
+    validations:
+      required: true

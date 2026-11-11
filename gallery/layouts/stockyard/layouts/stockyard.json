@@ -1,0 +1,28 @@
+{
+  "id": "root",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [14, 13],
+  "background": "canvas",
+  "font_size": 13,
+  "terminal_padding": [10, 8],
+  "preview": "mods/stockyard/preview.svg",
+  "children": [
+    {
+      "id": "stockyard-bar",
+      "type": "block",
+      "size": { "px": 40 },
+      "window_drag": true,
+      "content": { "mod": "stockyard", "props": { "role": "bar" } }
+    },
+    {
+      "id": "yard",
+      "type": "column",
+      "padding": 8,
+      "gap": 8,
+      "children": [
+        { "id": "yard-empty", "type": "block", "content": { "mod": "stockyard", "props": { "role": "empty" } } }
+      ]
+    }
+  ]
+}

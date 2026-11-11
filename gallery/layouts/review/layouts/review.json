@@ -1,0 +1,51 @@
+{
+  "id": "root",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [16, 17],
+  "background": "canvas",
+  "terminal_padding": [14, 12],
+  "preview": "mods/review-bar/preview.svg",
+  "children": [
+    {
+      "id": "review-bar",
+      "type": "block",
+      "size": { "px": 48 },
+      "window_drag": true,
+      "content": { "mod": "review-bar" }
+    },
+    {
+      "id": "review-body",
+      "type": "row",
+      "padding": 10,
+      "gap": 10,
+      "children": [
+        {
+          "id": "main",
+          "type": "block",
+          "min": 360,
+          "content": {
+            "tab": "active",
+            "pane": {
+              "gap": 10,
+              "radius": 10,
+              "background": "background",
+              "lone": true,
+              "border": { "width": 1, "color": "border" },
+              "focus": { "width": 1, "color": "accent" },
+              "header": { "content": { "mod": "pane" }, "height": 30, "position": "top", "reveal": "always" }
+            }
+          }
+        },
+        {
+          "id": "review-changes",
+          "type": "block",
+          "size": { "px": 470 },
+          "min": 320,
+          "max": 960,
+          "content": { "mod": "changes" }
+        }
+      ]
+    }
+  ]
+}

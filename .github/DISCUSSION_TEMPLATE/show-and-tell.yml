@@ -1,0 +1,28 @@
+title: "[Show and tell] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Show a layout, mod or setup you made. To list it in the [gallery](https://woolshed.dev/gallery/), put it in a public GitHub repository with the topic `woolshed-layout` or `woolshed-mod`: see [CONTRIBUTING.md](https://github.com/woolshed-dev/woolshed/blob/main/CONTRIBUTING.md#share-a-layout-or-mod).
+  - type: input
+    id: link
+    attributes:
+      label: Gallery address or GitHub folder
+      placeholder: woolshed.dev/gallery/mods/<owner>/<name> or github.com/<owner>/<repo>/tree/<ref>/<folder>
+    validations:
+      required: false
+  - type: textarea
+    id: what
+    attributes:
+      label: What it is
+      description: What it does, and a screenshot or short video.
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: How you made it
+      description: Optional. The prompt you gave your agent, or anything you learned.
+    validations:
+      required: false

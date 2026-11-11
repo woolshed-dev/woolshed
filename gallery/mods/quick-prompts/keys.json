@@ -1,0 +1,5 @@
+{
+  "global": {
+    "ctrl-shift-q": "mod.open:quick-prompts"
+  }
+}

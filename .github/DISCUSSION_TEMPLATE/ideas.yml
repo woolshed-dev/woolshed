@@ -1,0 +1,32 @@
+title: "[Idea] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas for Woolshed itself. A lot can be built as a mod or a layout, without waiting: try the [mod quickstart](https://github.com/woolshed-dev/woolshed/blob/main/docs/mods-quickstart.md) first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would it help you do?
+      description: The situation, and what gets in the way today.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: How you picture it working. Sketches and screenshots welcome.
+    validations:
+      required: true
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Could a mod or layout do it?
+      options:
+        - I don't know
+        - No, it needs the app itself
+        - Partly
+        - Yes, but it would be better built in
+    validations:
+      required: false

@@ -1,0 +1,43 @@
+{
+  "id": "root",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [16, 17],
+  "background": "canvas",
+  "terminal_padding": [14, 12],
+  "preview": "mods/board/preview.svg",
+  "children": [
+    {
+      "id": "board-bar",
+      "type": "block",
+      "size": { "px": 48 },
+      "window_drag": true,
+      "content": { "mod": "board", "props": { "role": "bar" } }
+    },
+    {
+      "id": "board-body",
+      "type": "row",
+      "padding": 10,
+      "gap": 10,
+      "children": [
+        {
+          "id": "lanes",
+          "type": "block",
+          "size": { "weight": 3 },
+          "min": 300,
+          "content": { "mod": "board", "props": { "role": "lanes" } }
+        },
+        {
+          "id": "stage",
+          "type": "block",
+          "size": { "weight": 2 },
+          "min": 320,
+          "background": "background",
+          "border": { "width": 1, "color": "border" },
+          "radius": 10,
+          "content": { "agent": "focused" }
+        }
+      ]
+    }
+  ]
+}

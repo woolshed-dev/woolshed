@@ -1,0 +1,1 @@
+{ "place": "bottom", "size": 26, "title": "Clock strip", "overlay": { "kind": "window", "key": "clock-strip", "keep": true } }
