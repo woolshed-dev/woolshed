@@ -265,6 +265,8 @@ export function window(): {
   maximized: boolean;
   fullscreen: boolean;
   active: boolean;
+  /** Device pixels per point on the window's display (2 on a Retina screen). */
+  scale: number;
   /** Which window this is: 1 is the main window; 2 and up are on other screens. */
   number: number;
   /** Every open Woolshed window: its number, its display (1 at the left), the space and tab it
@@ -439,3 +441,63 @@ export function nextCommand(): Promise<string>;
  * Watch what you show, not a whole home folder (node_modules is a lot of events).
  */
 export function watchFolder(path: string): Promise<string[]>;
+
+/** A page in the Browser pane's engine (`browser.*` commands make and drive them). */
+export interface BrowserPage {
+  id: string;
+  url: string;
+  title: string;
+  loading: boolean;
+  /** Bumped on every change: pass it to nextBrowserChange. */
+  version: number;
+  /** The newest frame of its screen while a pane shows it (`browserInput` "view"): a JPEG under
+   *  the app home for image(path).live(String(version)); width and height in CSS pixels. */
+  frame: { path: string; version: number; width: number; height: number } | null;
+  canBack: boolean;
+  canForward: boolean;
+  /** Errors logged since the pane last sent "seen". */
+  errors: number;
+  /** Why the last navigation failed (net::ERR_CONNECTION_REFUSED), until the next. */
+  error: string | null;
+  /** A page this one opened in a new window: show that one. */
+  opened: string | null;
+  closed: boolean;
+  viewport: { width: number; height: number; scale: number; mobile: boolean } | null;
+  /** An agent fixed the viewport (browser.viewport): the pane fits the frame instead. */
+  fixed: boolean;
+  /** Pointing at an element ("pick"): the page highlights what's under the pointer; a click picks it. */
+  picking: boolean;
+  /** An agent waits for the person to pick (browser.pick). */
+  asking: boolean;
+  /** The last element picked, until "unpick" (an agent that asked for it takes it at once).
+   *  shot: its screenshot's path; image: the same, from the app home (for image()). */
+  picked: { selector: string; tag: string; text: string; html: string; component: string | null; source: string | null;
+    box: { x: number; y: number; width: number; height: number }; style: Record<string, string>;
+    shot?: string; image?: string; url: string } | null;
+  picks: number;
+}
+
+/** A page's state, or null when there's no such page (the browser isn't running, or it closed). Never starts the browser. */
+export function browser(id: string): BrowserPage | null;
+
+/** Resolves once page `id` has changed past `version` (also when it appears or closes: null then).
+ *   cx.spawn(async (cx) => { for (;;) { this.page = await nextBrowserChange(id, this.page?.version ?? 0); cx.notify(); } }); */
+export function nextBrowserChange(id: string, version: number): Promise<BrowserPage | null>;
+
+/** What a pane sends a page; never waits. Positions are CSS pixels in the page's view.
+ *  "view": this pane shows it, with room width x height at the screen's scale (frames start; the page fits unless fixed);
+ *  "hide": it doesn't any more (frames stop when no pane shows it); "seen": clear errors and opened;
+ *  "pick": start or stop pointing at an element; "unpick": put the last pick away;
+ *  "mouse": type "move" | "down" | "up" | "wheel", button, clicks, pressed (a button held while moving), dx/dy for wheel;
+ *  "key": key (GPUI's name) and text (what it types); "text": text typed at once (paste). modifiers as GPUI's. */
+export function browserInput(id: string, event:
+  | { kind: "view"; viewer: string; width: number; height: number; scale: number }
+  | { kind: "hide"; viewer: string }
+  | { kind: "seen" }
+  | { kind: "pick"; on: boolean }
+  | { kind: "unpick" }
+  | { kind: "mouse"; type: "move" | "down" | "up" | "wheel"; x: number; y: number; button?: "left" | "right" | "middle"; clicks?: number; pressed?: boolean; dx?: number; dy?: number; modifiers?: BrowserModifiers }
+  | { kind: "key"; key: string; text?: string | null; modifiers?: BrowserModifiers }
+  | { kind: "text"; text: string }): null;
+
+export interface BrowserModifiers { shift?: boolean; control?: boolean; alt?: boolean; platform?: boolean; function?: boolean }

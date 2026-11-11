@@ -368,6 +368,15 @@ Show an agent (sub-agents too). When another window shows it, that window comes 
 |---|---|
 | `terminal` | yes |
 
+## `agent.answer`
+
+Answer an agent that needs you, in its terminal: "allow" (Enter: its dialog's first choice, yes), "deny" (Esc: no), an option's number ("1" to "9"), or "reply" (shows it and opens Reply: says no, then types your text in once it's free). Keys go in only while it's still blocked.
+
+| Argument | Required |
+|---|---|
+| `terminal` | yes |
+| `answer` | yes |
+
 ## `agent.next`
 
 Show the next agent, in the order the agents list shows them.
@@ -476,6 +485,209 @@ Toggle a mod as the overlay its mod.json describes; calling again closes it.
 ## `overlay.close`
 
 Close an overlay (default: the top dialog or popup).
+
+| Argument | Required |
+|---|---|
+| `id` | no |
+
+## `browser.open`
+
+Open a web page in the Browser pane: url (`5173` and `localhost:5173` mean http://localhost:5173), in the page shown already (default), page `id` (made with that id when there's none), or a new one (new: true); place "right" (default), "down", "tab" or "none" (no pane: for agents). Waits for it to load; answers with its id, url and title. The pages run in an installed Chrome, Chromium, Edge or Brave, headless.
+
+| Argument | Required |
+|---|---|
+| `url` | no |
+| `id` | no |
+| `place` | no |
+| `new` | no |
+| `timeout` | no |
+
+## `browser.navigate`
+
+Go to an address in a page (default: the one last used or shown) and wait for it to load (timeout in ms, default 15000). A page that won't load is an error saying why (net::ERR_CONNECTION_REFUSED).
+
+| Argument | Required |
+|---|---|
+| `url` | yes |
+| `id` | no |
+| `timeout` | no |
+
+## `browser.back`
+
+Go back in a page's history.
+
+| Argument | Required |
+|---|---|
+| `id` | no |
+
+## `browser.forward`
+
+Go forward in a page's history.
+
+| Argument | Required |
+|---|---|
+| `id` | no |
+
+## `browser.reload`
+
+Load the page again (hard: true skips the cache).
+
+| Argument | Required |
+|---|---|
+| `id` | no |
+| `hard` | no |
+
+## `browser.click`
+
+Click an element, as a person's click: by ref (from browser.tree), CSS selector, or the text it shows (text: a button's or link's words, a field's label), or at x and y (CSS pixels in the page's view). It's scrolled into view first; a page it loads is waited for. button: "left" (default), "right", "middle"; double: true.
+
+| Argument | Required |
+|---|---|
+| `ref` | no |
+| `selector` | no |
+| `text` | no |
+| `x` | no |
+| `y` | no |
+| `button` | no |
+| `double` | no |
+| `id` | no |
+
+## `browser.type`
+
+Type text: into the element named by ref, selector or into (its label or placeholder: clicked first), else where the page's focus is. clear: true empties the field first; submit: true presses Enter after.
+
+| Argument | Required |
+|---|---|
+| `text` | yes |
+| `ref` | no |
+| `selector` | no |
+| `into` | no |
+| `x` | no |
+| `y` | no |
+| `clear` | no |
+| `submit` | no |
+| `id` | no |
+
+## `browser.key`
+
+Press keys: Enter, Tab, Escape, Backspace, ArrowDown, a, Shift+Tab, Mod+a (Command on macOS, Control elsewhere); several separated by spaces; times repeats.
+
+| Argument | Required |
+|---|---|
+| `key` | yes |
+| `times` | no |
+| `id` | no |
+
+## `browser.scroll`
+
+Scroll the page: by dy/dx CSS pixels (default: most of a screen down) at x, y; to "top" or "bottom"; or until an element (ref, selector, text) is in view. Answers with where it is.
+
+| Argument | Required |
+|---|---|
+| `dy` | no |
+| `dx` | no |
+| `x` | no |
+| `y` | no |
+| `to` | no |
+| `ref` | no |
+| `selector` | no |
+| `text` | no |
+| `id` | no |
+
+## `browser.text`
+
+The page's text as a person reads it (or one element's, by CSS selector). `woolshed do` prints it as it is.
+
+| Argument | Required |
+|---|---|
+| `selector` | no |
+| `id` | no |
+
+## `browser.tree`
+
+The page's accessibility tree: one line per heading, link, button, field and text, with its state and a [ref=N] for browser.click, browser.type, browser.shot. `woolshed do` prints it as it is.
+
+| Argument | Required |
+|---|---|
+| `id` | no |
+
+## `browser.shot`
+
+A PNG screenshot of the page's view (full: true: the whole page; or one element, by ref, selector or text) to path (default: data/browser/shots/); answers with its path and size.
+
+| Argument | Required |
+|---|---|
+| `path` | no |
+| `full` | no |
+| `ref` | no |
+| `selector` | no |
+| `text` | no |
+| `id` | no |
+
+## `browser.console`
+
+What the page logged (console messages, uncaught errors, failed loads, answered dialogs), each with its level, text and source file:line. level: "error" or "warn" for only those and worse; since: the `next` of an earlier answer, for only what's new; clear: true empties it.
+
+| Argument | Required |
+|---|---|
+| `level` | no |
+| `since` | no |
+| `clear` | no |
+| `id` | no |
+
+## `browser.eval`
+
+Run JavaScript in the page and answer with its value (as JSON; a promise is awaited; await works).
+
+| Argument | Required |
+|---|---|
+| `js` | yes |
+| `id` | no |
+
+## `browser.wait`
+
+Wait until the page shows text, has an element matching selector, or its address contains url (gone: true: until they're gone); with none of them, until it has loaded. timeout in ms (default 10000, at most 30000).
+
+| Argument | Required |
+|---|---|
+| `text` | no |
+| `selector` | no |
+| `url` | no |
+| `gone` | no |
+| `timeout` | no |
+| `id` | no |
+
+## `browser.viewport`
+
+Size the page's view in CSS pixels (a phone: width 390, height 844, mobile: true; scale: the pixel ratio), whatever pane shows it; fit: true follows the pane again (the default).
+
+| Argument | Required |
+|---|---|
+| `width` | no |
+| `height` | no |
+| `scale` | no |
+| `mobile` | no |
+| `fit` | no |
+| `id` | no |
+
+## `browser.pick`
+
+Ask the person to point at an element in the Browser pane and wait (timeout in ms, default 120000) for what they picked: its CSS selector, text, HTML, box, look, the component and source file:line where a dev build of React, Vue or Svelte says, and a screenshot of it (shot). The person can also pick one themselves and send it to you with a message.
+
+| Argument | Required |
+|---|---|
+| `timeout` | no |
+| `id` | no |
+
+## `browser.ls`
+
+The open pages: id, url, title, whether a pane shows it, and which one commands use by default (current).
+
+No arguments.
+
+## `browser.close`
+
+Close a page (its pane says so).
 
 | Argument | Required |
 |---|---|
