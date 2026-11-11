@@ -1,0 +1,54 @@
+name: Bug report
+description: Something in Woolshed doesn't work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. A security problem? Please report it privately instead: see SECURITY.md.
+        Tip: `woolshed feedback "what happened"` drafts a report with your version and system filled in.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+      placeholder: |
+        1. Opened a space on my SSH machine
+        2. Started Claude Code
+        3. Expected it in the agents list; it wasn't there
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Woolshed version
+      description: Settings › Updates, or `woolshed --version`.
+      placeholder: "0.1.5"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: System
+      options:
+        - macOS (Apple silicon)
+        - Linux (x86-64)
+        - Linux (ARM64)
+        - Windows (x64)
+    validations:
+      required: true
+  - type: input
+    id: system-version
+    attributes:
+      label: System version
+      placeholder: "macOS 26.1, Ubuntu 24.04, Windows 11 24H2…"
+  - type: input
+    id: agent
+    attributes:
+      label: Agent, if it's about one
+      placeholder: "Claude Code 2.4, Codex, a shell…"
+  - type: textarea
+    id: more
+    attributes:
+      label: Screenshots, logs or anything else
+      description: "`hc server status` output helps for anything about terminals or agents. Leave out anything private: tokens, keys, your code."

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea
+    url: https://github.com/woolshed-dev/woolshed/discussions
+    about: Ask, share what you built, or float an idea.
+  - name: Security problem
+    url: https://github.com/woolshed-dev/woolshed/security/advisories/new
+    about: Report it privately, not in an issue.
+  - name: Getting started and docs
+    url: https://woolshed.dev/start/
+    about: Your first 10 minutes, the FAQ and the developer guide.

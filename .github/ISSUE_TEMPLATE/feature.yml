@@ -1,0 +1,32 @@
+name: Feature request
+description: Something you'd like Woolshed to do.
+labels: [feature]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The job, not the solution. What gets in your way today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+      description: How you picture it working. A sketch or a screenshot of something similar is welcome.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Agents and terminals
+        - Chat
+        - Spaces, tabs and layouts
+        - Your computers and machines over SSH
+        - Phone app
+        - Woolshed Voice
+        - Mods and the gallery
+        - Something else
+  - type: markdown
+    attributes:
+      value: Could a mod do it? Many things can: see the [developer guide](https://woolshed.dev/developers/). Upvote requests you want with a 👍; we sort by them.
