@@ -1,0 +1,262 @@
+{
+  "id": "root",
+  "type": "row",
+  "titlebar": "none",
+  "traffic_lights": [
+    12,
+    16
+  ],
+  "theme": {
+    "light": "paper",
+    "dark": "ink"
+  },
+  "colors": {
+    "accent": "#1a7f8e",
+    "accent_foreground": "#ffffff",
+    "dim": "#7b8494",
+    "working": "#b07a00",
+    "blocked": "#d9473a",
+    "done": "#3f7fe0",
+    "idle": "#7b8494",
+    "unknown": "#7b8494"
+  },
+  "background": "canvas",
+  "terminal_padding": [
+    14,
+    12
+  ],
+  "divider": {
+    "width": 1,
+    "color": "border"
+  },
+  "preview": "layouts/tide.svg",
+  "children": [
+    {
+      "id": "sidebar",
+      "type": "column",
+      "size": {
+        "px": 268
+      },
+      "min": 44,
+      "max": 480,
+      "background": "chrome",
+      "resizable": false,
+      "children": [
+        {
+          "id": "brand",
+          "type": "block",
+          "size": {
+            "px": 46
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "workspace-chrome"
+          }
+        },
+        {
+          "id": "sidebar-lists",
+          "type": "column",
+          "children": [
+            {
+              "id": "spaces",
+              "type": "block",
+              "size": {
+                "weight": 1
+              },
+              "min": 90,
+              "content": {
+                "mod": "spaces"
+              }
+            },
+            {
+              "id": "agents",
+              "type": "block",
+              "size": {
+                "weight": 1
+              },
+              "min": 90,
+              "content": {
+                "mod": "agents"
+              }
+            },
+            {
+              "id": "history",
+              "type": "block",
+              "size": {
+                "weight": 2
+              },
+              "min": 90,
+              "content": {
+                "mod": "history"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sidebar-footer",
+          "type": "block",
+          "size": {
+            "px": 97
+          },
+          "content": {
+            "mod": "workspace-chrome",
+            "props": {
+              "footer": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "resizable": false,
+      "children": [
+        {
+          "id": "tabs",
+          "type": "block",
+          "size": {
+            "px": 42
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "tabs"
+          }
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "padding": 8,
+          "gap": 8,
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "empty": {
+                  "mod": "new-session",
+                  "props": {
+                    "page": true
+                  }
+                },
+                "pane": {
+                  "gap": 8,
+                  "radius": 10,
+                  "background": "background",
+                  "lone": true,
+                  "border": {
+                    "width": 1,
+                    "color": "border"
+                  },
+                  "focus": {
+                    "width": 1,
+                    "color": "accent"
+                  },
+                  "header": {
+                    "content": {
+                      "mod": "pane"
+                    },
+                    "height": 30,
+                    "position": "top",
+                    "reveal": "always"
+                  }
+                }
+              }
+            },
+            {
+              "id": "panel",
+              "type": "column",
+              "hidden": true,
+              "size": {
+                "px": 368
+              },
+              "min": 280,
+              "max": 900,
+              "children": [
+                {
+                  "id": "panel-body",
+                  "type": "stack",
+                  "active": "files",
+                  "children": [
+                    {
+                      "id": "files",
+                      "type": "block",
+                      "content": {
+                        "mod": "files"
+                      }
+                    },
+                    {
+                      "id": "changes",
+                      "type": "block",
+                      "content": {
+                        "mod": "changes"
+                      }
+                    },
+                    {
+                      "id": "server",
+                      "type": "block",
+                      "content": {
+                        "mod": "server"
+                      }
+                    },
+                    {
+                      "id": "mailbox",
+                      "type": "block",
+                      "content": {
+                        "mod": "mailbox"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "status-bar",
+          "type": "row",
+          "size": {
+            "px": 28
+          },
+          "resizable": false,
+          "children": [
+            {
+              "id": "status",
+              "type": "block",
+              "content": {
+                "mod": "workspace-status"
+              }
+            },
+            {
+              "id": "mailbox-status",
+              "type": "block",
+              "size": {
+                "px": 170
+              },
+              "content": {
+                "mod": "mailbox",
+                "props": {
+                  "part": "status"
+                }
+              }
+            },
+            {
+              "id": "server-status",
+              "type": "block",
+              "size": {
+                "px": 220
+              },
+              "content": {
+                "mod": "server",
+                "props": {
+                  "part": "status"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

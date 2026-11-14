@@ -1,0 +1,1 @@
+{ "place": "none", "title": "World clock", "overlay": { "kind": "window", "key": "world-clock", "keep": true } }

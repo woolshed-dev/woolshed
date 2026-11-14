@@ -1,0 +1,5 @@
+{
+  "global": {
+    "ctrl-alt-v": "mod.open:clipboard-history"
+  }
+}

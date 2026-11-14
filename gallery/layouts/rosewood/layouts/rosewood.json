@@ -1,0 +1,293 @@
+{
+  "id": "root",
+  "type": "row",
+  "titlebar": "none",
+  "traffic_lights": [
+    12,
+    16
+  ],
+  "theme": "graphite",
+  "colors": {
+    "background": "#1f1216",
+    "surface": "#1f1216",
+    "canvas": "#190e12",
+    "chrome": "#130a0d",
+    "popover": "#29191e",
+    "raised": "#301d23",
+    "hover": "#f2e3e60f",
+    "selected": "#f2e3e61a",
+    "border": "#3b252c",
+    "input": "#53343e",
+    "selection": "#502835",
+    "accent": "#ea8aa6",
+    "accent_foreground": "#190e12",
+    "solid": "#f2e3e6",
+    "solid_foreground": "#190e12",
+    "foreground": "#f2e3e6",
+    "terminal_foreground": "#e4d1d5",
+    "muted": "#b59aa0",
+    "dim": "#886b72",
+    "cursor": "#ea8aa6",
+    "ring": "#b59aa0",
+    "working": "#e9c171",
+    "blocked": "#ff7148",
+    "done": "#90b1f1",
+    "idle": "#886b72",
+    "unknown": "#886b72",
+    "ansi0": "#3b252c",
+    "ansi1": "#f17b7b",
+    "ansi2": "#b1ca8b",
+    "ansi3": "#e9c37b",
+    "ansi4": "#93afe1",
+    "ansi5": "#da97c5",
+    "ansi6": "#8dc5bd",
+    "ansi7": "#e4d1d5",
+    "ansi8": "#8d7178",
+    "ansi9": "#ff9b96",
+    "ansi10": "#c7dda5",
+    "ansi11": "#f6d696",
+    "ansi12": "#aec5ef",
+    "ansi13": "#e9b1d7",
+    "ansi14": "#a7d9d1",
+    "ansi15": "#fcf2f4"
+  },
+  "background": "canvas",
+  "terminal_padding": [
+    14,
+    12
+  ],
+  "divider": {
+    "width": 1,
+    "color": "border"
+  },
+  "preview": "layouts/rosewood.svg",
+  "children": [
+    {
+      "id": "sidebar",
+      "type": "column",
+      "size": {
+        "px": 268
+      },
+      "min": 44,
+      "max": 480,
+      "background": "chrome",
+      "resizable": false,
+      "children": [
+        {
+          "id": "brand",
+          "type": "block",
+          "size": {
+            "px": 46
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "workspace-chrome"
+          }
+        },
+        {
+          "id": "sidebar-lists",
+          "type": "column",
+          "children": [
+            {
+              "id": "spaces",
+              "type": "block",
+              "size": {
+                "weight": 1
+              },
+              "min": 90,
+              "content": {
+                "mod": "spaces"
+              }
+            },
+            {
+              "id": "agents",
+              "type": "block",
+              "size": {
+                "weight": 1
+              },
+              "min": 90,
+              "content": {
+                "mod": "agents"
+              }
+            },
+            {
+              "id": "history",
+              "type": "block",
+              "size": {
+                "weight": 2
+              },
+              "min": 90,
+              "content": {
+                "mod": "history"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sidebar-footer",
+          "type": "block",
+          "size": {
+            "px": 97
+          },
+          "content": {
+            "mod": "workspace-chrome",
+            "props": {
+              "footer": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "resizable": false,
+      "children": [
+        {
+          "id": "tabs",
+          "type": "block",
+          "size": {
+            "px": 42
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "tabs"
+          }
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "padding": 8,
+          "gap": 8,
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "empty": {
+                  "mod": "new-session",
+                  "props": {
+                    "page": true
+                  }
+                },
+                "pane": {
+                  "gap": 8,
+                  "radius": 10,
+                  "background": "background",
+                  "lone": true,
+                  "border": {
+                    "width": 1,
+                    "color": "border"
+                  },
+                  "focus": {
+                    "width": 1,
+                    "color": "accent"
+                  },
+                  "header": {
+                    "content": {
+                      "mod": "pane"
+                    },
+                    "height": 30,
+                    "position": "top",
+                    "reveal": "always"
+                  }
+                }
+              }
+            },
+            {
+              "id": "panel",
+              "type": "column",
+              "hidden": true,
+              "size": {
+                "px": 368
+              },
+              "min": 280,
+              "max": 900,
+              "children": [
+                {
+                  "id": "panel-body",
+                  "type": "stack",
+                  "active": "files",
+                  "children": [
+                    {
+                      "id": "files",
+                      "type": "block",
+                      "content": {
+                        "mod": "files"
+                      }
+                    },
+                    {
+                      "id": "changes",
+                      "type": "block",
+                      "content": {
+                        "mod": "changes"
+                      }
+                    },
+                    {
+                      "id": "server",
+                      "type": "block",
+                      "content": {
+                        "mod": "server"
+                      }
+                    },
+                    {
+                      "id": "mailbox",
+                      "type": "block",
+                      "content": {
+                        "mod": "mailbox"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "status-bar",
+          "type": "row",
+          "size": {
+            "px": 28
+          },
+          "resizable": false,
+          "children": [
+            {
+              "id": "status",
+              "type": "block",
+              "content": {
+                "mod": "workspace-status"
+              }
+            },
+            {
+              "id": "mailbox-status",
+              "type": "block",
+              "size": {
+                "px": 170
+              },
+              "content": {
+                "mod": "mailbox",
+                "props": {
+                  "part": "status"
+                }
+              }
+            },
+            {
+              "id": "server-status",
+              "type": "block",
+              "size": {
+                "px": 220
+              },
+              "content": {
+                "mod": "server",
+                "props": {
+                  "part": "status"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

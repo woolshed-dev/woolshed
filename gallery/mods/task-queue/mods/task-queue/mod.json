@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Task queue", "overlay": { "kind": "window", "key": "task-queue", "keep": true } }

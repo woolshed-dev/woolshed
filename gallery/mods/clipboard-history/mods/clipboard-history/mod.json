@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Clipboard history", "overlay": { "kind": "window", "key": "clipboard-history", "keep": true } }

@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Kubernetes pods", "overlay": { "kind": "window", "key": "k8s-pods", "keep": true } }

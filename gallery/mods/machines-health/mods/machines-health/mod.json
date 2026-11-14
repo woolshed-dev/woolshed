@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Machines health", "overlay": { "kind": "window", "key": "machines-health", "keep": true } }

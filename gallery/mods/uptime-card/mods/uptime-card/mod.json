@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Uptime", "overlay": { "kind": "window", "key": "uptime-card", "keep": true } }

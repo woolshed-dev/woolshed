@@ -1,0 +1,44 @@
+{
+  "id": "root",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [16, 17],
+  "background": "canvas",
+  "terminal_padding": [14, 12],
+  "preview": "layouts/wall.svg",
+  "children": [
+    {
+      "id": "wall-bar",
+      "type": "block",
+      "size": { "px": 48 },
+      "window_drag": true,
+      "content": { "mod": "wall", "props": { "role": "bar" } }
+    },
+    {
+      "id": "wall-body",
+      "type": "row",
+      "padding": 10,
+      "gap": 10,
+      "children": [
+        {
+          "id": "tiles",
+          "type": "block",
+          "size": { "weight": 3 },
+          "min": 300,
+          "content": { "mod": "wall", "props": { "role": "wall" } }
+        },
+        {
+          "id": "stage",
+          "type": "block",
+          "size": { "weight": 2 },
+          "min": 320,
+          "background": "background",
+          "border": { "width": 1, "color": "border" },
+          "focus": { "border": { "width": 1, "color": "accent" } },
+          "radius": 10,
+          "content": { "agent": "focused" }
+        }
+      ]
+    }
+  ]
+}

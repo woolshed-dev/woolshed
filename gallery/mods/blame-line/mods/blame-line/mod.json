@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Blame line", "overlay": { "kind": "window", "key": "blame-line", "keep": true } }

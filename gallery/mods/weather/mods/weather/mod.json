@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Weather", "overlay": { "kind": "window", "key": "weather", "keep": true } }

@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Daily log", "overlay": { "kind": "window", "key": "daily-log", "keep": true } }

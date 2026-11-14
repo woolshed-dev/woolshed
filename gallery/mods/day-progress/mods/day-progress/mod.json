@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Day progress", "overlay": { "kind": "window", "key": "day-progress", "keep": true } }

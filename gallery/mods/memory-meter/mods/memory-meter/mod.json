@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Memory meter", "overlay": { "kind": "window", "key": "memory-meter", "keep": true } }

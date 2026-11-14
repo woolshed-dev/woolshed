@@ -1,0 +1,6 @@
+{
+  "layout:right-hand": {
+    "ctrl-shift-b": "layout.toggle:side",
+    "cmd-b": "layout.toggle:side"
+  }
+}

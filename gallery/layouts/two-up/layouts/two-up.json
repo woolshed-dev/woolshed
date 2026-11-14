@@ -1,0 +1,83 @@
+{
+  "id": "root",
+  "type": "row",
+  "titlebar": "none",
+  "traffic_lights": [14, 15],
+  "background": "canvas",
+  "terminal_padding": [14, 12],
+  "divider": { "width": 1, "color": "border" },
+  "preview": "layouts/two-up.svg",
+  "children": [
+    {
+      "id": "left",
+      "type": "column",
+      "size": { "weight": 1 },
+      "min": 360,
+      "resizable": false,
+      "children": [
+        {
+          "id": "left-head",
+          "type": "block",
+          "size": { "px": 42 },
+          "window_drag": true,
+          "content": { "mod": "two-up", "props": { "role": "left" } }
+        },
+        {
+          "id": "left-body",
+          "type": "row",
+          "padding": 8,
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "empty": { "mod": "new-session", "props": { "page": true } },
+                "pane": {
+                  "gap": 8,
+                  "radius": 10,
+                  "background": "background",
+                  "lone": true,
+                  "border": { "width": 1, "color": "border" },
+                  "focus": { "width": 1, "color": "accent" }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "right",
+      "type": "column",
+      "size": { "weight": 1 },
+      "min": 320,
+      "resizable": false,
+      "children": [
+        {
+          "id": "right-head",
+          "type": "block",
+          "size": { "px": 42 },
+          "window_drag": true,
+          "content": { "mod": "two-up", "props": { "role": "right" } }
+        },
+        {
+          "id": "right-body",
+          "type": "row",
+          "padding": 8,
+          "children": [
+            {
+              "id": "pair",
+              "type": "block",
+              "background": "background",
+              "border": { "width": 1, "color": "border" },
+              "focus": { "border": { "width": 1, "color": "accent" } },
+              "radius": 10,
+              "content": { "mod": "two-up", "props": { "role": "pick" } }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

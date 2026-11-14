@@ -1,0 +1,5 @@
+{
+  "global": {
+    "ctrl-alt-k": "mod.open:calc"
+  }
+}

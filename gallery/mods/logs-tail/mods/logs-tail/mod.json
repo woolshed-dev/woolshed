@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Logs tail", "overlay": { "kind": "window", "key": "logs-tail", "keep": true } }

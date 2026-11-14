@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Git log", "overlay": { "kind": "window", "key": "git-log", "keep": true } }

@@ -1,0 +1,1 @@
+{ "place": "none", "title": "CPU meter", "overlay": { "kind": "window", "key": "cpu-meter", "keep": true } }

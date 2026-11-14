@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Remote check", "overlay": { "kind": "window", "key": "remote-check", "keep": true } }

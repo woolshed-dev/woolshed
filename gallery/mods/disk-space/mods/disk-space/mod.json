@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Disk space", "overlay": { "kind": "window", "key": "disk-space", "keep": true } }

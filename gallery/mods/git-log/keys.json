@@ -1,0 +1,5 @@
+{
+  "global": {
+    "ctrl-alt-g": "mod.open:git-log"
+  }
+}

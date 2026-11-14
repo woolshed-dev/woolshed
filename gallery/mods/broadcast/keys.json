@@ -1,0 +1,5 @@
+{
+  "global": {
+    "ctrl-alt-b": "mod.open:broadcast"
+  }
+}

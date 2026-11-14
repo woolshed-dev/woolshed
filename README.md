@@ -29,6 +29,7 @@
 </p>
 
 This repository is where Woolshed's releases, bug reports, feature requests and roadmap live.
+**Star it** to get every release in your GitHub feed, and to help other people running coding agents find Woolshed.
 The app is made by [Hatchify](https://woolshed.dev/press/); its source isn't public.
 
 ## Install

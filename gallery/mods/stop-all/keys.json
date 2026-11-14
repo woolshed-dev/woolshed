@@ -1,0 +1,5 @@
+{
+  "global": {
+    "ctrl-alt-x": "mod.open:stop-all"
+  }
+}

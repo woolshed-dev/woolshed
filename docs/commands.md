@@ -354,6 +354,23 @@ Ctrl+V: the clipboard's image as a file on the focused terminal's machine, when 
 
 No arguments.
 
+## `terminal.select`
+
+Copy mode: a keyboard cursor over a terminal's screen and scrollback (default: the focused one), shown as a one-cell selection; the first call puts it at the program's cursor. move: left, right, up, down, next-word, prev-word, end-word, next-big-word, prev-big-word, end-big-word, line-start, first-char, line-end, page-up, page-down, half-page-up, half-page-down, top, bottom, screen-top, screen-middle, screen-bottom (count repeats it). mark: true starts the selection at the cursor (false drops it); select: "word" or "line" under the cursor; to: {row, col} on the visible screen; block: a rectangle; swap: cursor and mark trade places; copy: copies the marked text and leaves copy mode; exit: leaves it. The view follows the cursor. Answers cursor and mark ({row, col, line}), the selected text, and active. Typing or a mouse selection also ends it.
+
+| Argument | Required |
+|---|---|
+| `move` | no |
+| `count` | no |
+| `mark` | no |
+| `select` | no |
+| `to` | no |
+| `block` | no |
+| `swap` | no |
+| `copy` | no |
+| `exit` | no |
+| `terminal` | no |
+
 ## `terminal.search`
 
 Search the focused terminal's screen and scrollback; the find bar and query stay with that terminal.
@@ -840,7 +857,7 @@ Show the plans: Free, Woolshed Pro and Pro + Voice, with this computer's plan. `
 
 ## `account.checkout`
 
-Start Woolshed Pro in the browser (Stripe Checkout): `plan` "pro_monthly" (the default; a 14-day free trial the first time), "pro_yearly" or "bundle_monthly" (Pro + Voice). Signs in first if needed.
+Start Woolshed Pro in the browser (Stripe Checkout): `plan` "pro_monthly" (the default; a 3-month free trial the first time), "pro_yearly" or "bundle_monthly" (Pro + Voice). Signs in first if needed.
 
 | Argument | Required |
 |---|---|
@@ -875,6 +892,22 @@ Turn down a computer asking to join Your computers.
 | Argument | Required |
 |---|---|
 | `request` | yes |
+
+## `computers.trust`
+
+Take the list of your computers waiting on this computer (computers/status.json `confirm`): `by` is the computer that added this one. Only after the person checked that computer shows the same code.
+
+| Argument | Required |
+|---|---|
+| `by` | yes |
+
+## `computers.distrust`
+
+Not me: refuse the list of your computers waiting on this computer (`confirm`), and never ask about it again.
+
+| Argument | Required |
+|---|---|
+| `by` | yes |
 
 ## `computers.link_phone`
 

@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Git stash", "overlay": { "kind": "window", "key": "git-stash", "keep": true } }

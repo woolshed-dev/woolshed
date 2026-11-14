@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Agent dashboard", "overlay": { "kind": "window", "key": "agent-dashboard", "keep": true } }

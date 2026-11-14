@@ -1,0 +1,1 @@
+{ "place": "none", "title": "GitHub notifications", "overlay": { "kind": "window", "key": "gh-notifications", "keep": true } }

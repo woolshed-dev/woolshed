@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Break reminder", "overlay": { "kind": "window", "key": "break-reminder", "keep": true } }

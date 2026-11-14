@@ -1,0 +1,1 @@
+{ "place": "none", "title": "HTTP check", "overlay": { "kind": "window", "key": "http-check", "keep": true } }

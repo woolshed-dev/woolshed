@@ -1,0 +1,1 @@
+{ "place": "none", "title": "CI watch", "overlay": { "kind": "window", "key": "ci-watch", "keep": true } }

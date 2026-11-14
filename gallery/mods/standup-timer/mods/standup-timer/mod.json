@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Standup timer", "overlay": { "kind": "window", "key": "standup-timer", "keep": true } }

@@ -1,0 +1,33 @@
+{
+  "id": "root",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [12, 8],
+  "background": "background",
+  "terminal_padding": [26, 12],
+  "preview": "layouts/zen.svg",
+  "children": [
+    {
+      "id": "zen-top",
+      "type": "block",
+      "size": { "px": 26 },
+      "window_drag": true,
+      "content": { "mod": "zen" }
+    },
+    {
+      "id": "main",
+      "type": "block",
+      "content": {
+        "tab": "active",
+        "empty": { "mod": "new-session", "props": { "page": true } },
+        "pane": {
+          "gap": 14,
+          "radius": 8,
+          "background": "background",
+          "border": { "width": 1, "color": "background" },
+          "focus": { "width": 1, "color": "border" }
+        }
+      }
+    }
+  ]
+}

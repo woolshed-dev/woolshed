@@ -1,0 +1,6 @@
+{
+  "global": {
+    "ctrl-alt-w": "stopwatch.toggle",
+    "ctrl-alt-e": "stopwatch.lap"
+  }
+}

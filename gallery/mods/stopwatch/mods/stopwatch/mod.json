@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Stopwatch", "overlay": { "kind": "window", "key": "stopwatch", "keep": true } }

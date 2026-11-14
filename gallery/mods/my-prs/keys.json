@@ -1,0 +1,5 @@
+{
+  "global": {
+    "ctrl-alt-p": "mod.open:my-prs"
+  }
+}

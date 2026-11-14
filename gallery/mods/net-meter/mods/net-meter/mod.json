@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Network meter", "overlay": { "kind": "window", "key": "net-meter", "keep": true } }
