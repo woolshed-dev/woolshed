@@ -1,0 +1,47 @@
+{
+    "version": "0.1.7",
+    "description": "Desktop app for running coding agents in terminals",
+    "homepage": "https://woolshed.dev",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://woolshed.dev/releases/app/0.1.7/woolshed-windows-x86_64.zip",
+            "hash": "1c4303e895ad345d330ecd9877f9bb6dca8176bb45fb57b136284af11f78381b"
+        },
+        "arm64": {
+            "url": "https://woolshed.dev/releases/app/0.1.7/woolshed-windows-aarch64.zip",
+            "hash": "fef725adba1cacba3f8a468f405f0709de2041c44a115afadeb07e332a6421a4"
+        }
+    },
+    "extract_dir": "woolshed",
+    "bin": "woolshed.exe",
+    "shortcuts": [
+        [
+            "woolshed.exe",
+            "Woolshed"
+        ]
+    ],
+    "post_install": "[IO.File]::WriteAllText(\"$dir\\packaged-by\", \"scoop`n\")",
+    "checkver": {
+        "url": "https://woolshed.dev/releases/app/latest.json",
+        "jsonpath": "$.version"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://woolshed.dev/releases/app/$version/woolshed-windows-x86_64.zip",
+                "hash": {
+                    "url": "https://woolshed.dev/releases/app/$version/manifest.json",
+                    "jsonpath": "$.files['woolshed-windows-x86_64.zip'].sha256"
+                }
+            },
+            "arm64": {
+                "url": "https://woolshed.dev/releases/app/$version/woolshed-windows-aarch64.zip",
+                "hash": {
+                    "url": "https://woolshed.dev/releases/app/$version/manifest.json",
+                    "jsonpath": "$.files['woolshed-windows-aarch64.zip'].sha256"
+                }
+            }
+        }
+    }
+}

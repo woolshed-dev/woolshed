@@ -34,7 +34,12 @@ The app is made by [Hatchify](https://woolshed.dev/press/); its source isn't pub
 
 ## Install
 
-**Mac** (Apple silicon): [download Woolshed](https://woolshed.dev/releases/app/Woolshed.dmg), open it and drag Woolshed to Applications. It's signed and notarised by Apple.
+**Mac**: download Woolshed for [Apple silicon](https://woolshed.dev/releases/app/Woolshed.dmg) or [Intel](https://woolshed.dev/releases/app/Woolshed-Intel.dmg), open it and drag Woolshed to Applications. It's signed and notarised by Apple. Or with Homebrew:
+
+```sh
+brew tap woolshed-dev/woolshed https://github.com/woolshed-dev/woolshed
+brew install --cask woolshed
+```
 
 **Linux** (x86-64 and ARM64):
 
@@ -42,11 +47,13 @@ The app is made by [Hatchify](https://woolshed.dev/press/); its source isn't pub
 curl -fsSL https://woolshed.dev/releases/app/install.sh | sh
 ```
 
-**Windows** (x64), in PowerShell:
+**Windows** (x64 and ARM64), in PowerShell:
 
 ```powershell
 irm https://woolshed.dev/releases/app/install.ps1 | iex
 ```
+
+Or with Scoop: `scoop bucket add woolshed https://github.com/woolshed-dev/woolshed`, then `scoop install woolshed/woolshed`.
 
 Or ask the agent you already use: `Install Woolshed for me: woolshed.dev/install.txt`
 
