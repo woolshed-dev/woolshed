@@ -1,16 +1,16 @@
 {
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "Desktop app for running coding agents in terminals",
     "homepage": "https://woolshed.dev",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://woolshed.dev/releases/app/0.1.7/woolshed-windows-x86_64.zip",
-            "hash": "1c4303e895ad345d330ecd9877f9bb6dca8176bb45fb57b136284af11f78381b"
+            "url": "https://woolshed.dev/releases/app/0.1.8/woolshed-windows-x86_64.zip",
+            "hash": "77b2611da68f155b5eed721f6a5918aac398f26d4546de319dcb534312d50038"
         },
         "arm64": {
-            "url": "https://woolshed.dev/releases/app/0.1.7/woolshed-windows-aarch64.zip",
-            "hash": "fef725adba1cacba3f8a468f405f0709de2041c44a115afadeb07e332a6421a4"
+            "url": "https://woolshed.dev/releases/app/0.1.8/woolshed-windows-aarch64.zip",
+            "hash": "193e9c80f580e6c3aa29bc3a5bb6506dc3876470037789d7b3c5511c81e3c5f1"
         }
     },
     "extract_dir": "woolshed",

@@ -1,9 +1,9 @@
 cask "woolshed" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.1.7"
-  sha256 arm:   "2b4f7164767b1960710315c07650fe0d4d58750addc1d0985b572c57bddd0734",
-         intel: "3ab59e39b8c75dcc3d48630fee620344f4691a7172ea0d5a435eb90f7c461120"
+  version "0.1.8"
+  sha256 arm:   "7afdb108a7847c109e56046c124739da157106823e13d441bc97a42815d8b6f7",
+         intel: "6c16b48a001931ca3e33966a75a52ea8fdf3ea2ef083bc5648bef829a62263db"
 
   url "https://woolshed.dev/releases/app/#{version}/woolshed-macos-#{arch}.tar.gz"
 
